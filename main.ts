@@ -7,6 +7,10 @@ input.onButtonPressed(Button.A, function () {
         strip.show()
         basic.pause(100)
     }
+    basic.pause(200)
+})
+input.onButtonPressed(Button.B, function () {
+    strip.showRainbow(1, 360)
 })
 let strip: neopixel.Strip = null
 strip = neopixel.create(DigitalPin.P1, 8, NeoPixelMode.RGB)
@@ -15,5 +19,7 @@ strip.clear()
 strip.show()
 strip.showRainbow(1, 360)
 basic.forever(function () {
-	
+    strip.rotate(1)
+    basic.pause(100)
+    strip.show()
 })
